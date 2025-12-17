@@ -1,14 +1,21 @@
+// Ví dụ nội dung trong file be.js
 const express = require('express');
-const cors = require('cors'); // Quan trọng để Frontend gọi được vào Backend
+const cors = require('cors');
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 
-app.get('/api/data', (req, res) => {
-    res.json({ message: "Dữ liệu từ Backend Render!" });
+// Sửa đoạn này để thay đổi hiển thị
+app.get('/', (req, res) => {
+    res.json({
+        status: "Success",
+        message: "Backend đã được cập nhật nội dung mới!",
+        author: "Quang Nguyễn",
+        timestamp: new Date()
+    });
 });
 
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
