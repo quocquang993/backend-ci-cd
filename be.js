@@ -9,8 +9,8 @@ app.use(cors());
 app.get('/', (req, res) => {
     res.json({
         status: "Success",
-        message: "Backend đã được cập nhật nội dung mới!",
-        author: "Quang Nguyễn",
+        message: "Backend updated!",
+        author: "Quang",
         timestamp: new Date()
     });
 });
